@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  section.section
+    .container
+      .card
+        header.card-header
+          p.card-header-title New Poll
+        .card-content  
+          form#poll-form(action="/poll", method="POST")
+            .field
+              label.label(for="name") Name
+              .control
+                input.input(type="text", id="name", name="name", required)
+            .field
+              label.label(for="desc") Description
+              .control
+                textarea.textarea(id="desc", name="description", rows="6")
+            .field.is
+              label.label Options
+              .control
+                input.input(type="text", id="opt1", name="opt1", placeholder="Option 1", required)
+              .control
+                input.input(type="text", id="opt2", name="opt2", placeholder="Option 2", required)
+            a(href="#", disabled) Add option
+        footer.card-footer
+          a(href="http://") Cancel
+          button.button.is-primary(type="submit", form="poll-form") Create Poll

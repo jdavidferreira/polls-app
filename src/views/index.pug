@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  section.section
+    if authenticated
+      .container
+        a.button.is-primary(href="/poll/new") New Poll
+
+    .container
+      if polls && polls.length > 0
+        each poll in polls
+          .card
+            .card-content
+              h2= poll.name
+              p= poll.description
+            .card-footer
+              a.card-footer-item(href="http://", disabled)= poll.totalVotes + ' votes'
+              if (user && user._id.equals(poll.author._id))
+                a.card-footer-item(href=`/poll/${poll._id}/results`) Results
+              else
+                a.card-footer-item(href=`/poll/${poll._id}`) Vote
+      else
+        h6.has-text-centered No polls yet.

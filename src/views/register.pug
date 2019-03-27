@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  section.section
+    .container
+      .card
+        header.card-header
+          p.card-header-title Sign Up
+        .card-content  
+          form#login-form(action="/user", method="POST")
+            .field
+              label.label(for="email") Email
+              p.control.has-icons-left.has-icons-right
+                input.input(type="email", id="email", name="email", placeholder="e.g alexsmith@gmail.com")
+                span.icon.is-small.is-left
+                  i.fas.fa-envelope
+                span.icon.is-small.is-right
+                  i.fas.fa-check
+            .field
+              label.label(for="password") Password
+              p.control.has-icons-left
+                input.input(type="password", id="password", name="password", placeholder="e.g. must be secret!", required)
+                span.icon.is-small.is-left
+                  i.fas.fa-lock
+        footer.card-footer.container
+          button.card-footer-item.button.is-success(type="submit", form="login-form") Sign Up

@@ -1,0 +1,33 @@
+html.has-navbar-fixed-top
+  head
+    title= title
+    meta(http-equiv="Content-Type", content="text/html;charset=UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css")
+    link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.8.1/css/all.css", integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf", crossorigin="anonymous")
+  body
+    header
+      nav.navbar.is-dark.is-fixed-top(role="navigation", aria-label="main navigation")
+        .container
+          .navbar-brand
+            a.navbar-item(href="/")
+              strong Polls
+          
+            a.navbar-burger.burger(role="button", aria-label="menu", aria-expanded="false", data-target="navbarMenu")
+              span(aria-hidden="true")
+              span(aria-hidden="true")
+              span(aria-hidden="true")
+          #navBarMenu.navbar-menu
+            .navbar-end
+              if authenticated
+                .navbar-item
+                  a.button.is-small.is-light.is-outlined(href="/session/logout") Log Out
+              else
+                .navbar-item
+                  a.button.is-small.is-light(href="/session/new") Log In
+                .navbar-item
+                  a.button.is-info(href="/user/new")
+                    strong Sign Up
+
+
+    block content

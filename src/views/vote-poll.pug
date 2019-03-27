@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  .container
+    section.section
+      .level
+        .level-left
+          .buttons
+            a(href="/") ← Back
+      .card
+        .card-content
+          p.title= poll.name
+          p.subtitile.is-italic.has-text-grey-light.is-size-7= `Creado por ${poll.author.email}`
+          .contetn= poll.description
+      .card
+        .card-content
+          form(id="vote-form", action=`/poll/${poll._id}/vote`, method="post")
+            //- input(type="hidden", name="id", value=poll._id)
+            .field
+              label.label Seleccione una opción:
+              .control
+                each opt, index in poll.options
+                  label.radio
+                    input(type="radio", name="opt", value=index)
+                    = opt.description
+                  br
+      .level
+        .level-left
+        .level-right
+          .buttons
+            button.button.is-primary(type="submit", form="vote-form") Enviar
+      
+              

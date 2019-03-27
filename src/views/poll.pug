@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  section.section
+    .container.level
+      .level-left
+        .buttons
+          a(href="/") ← Back
+      .level-right
+        .buttons
+          a.button.is-white
+            span.icon.is-small
+              i.fas.fa-link
+          a.button.is-white
+            span.icon.is-small
+              i.fab.fa-facebook-square
+          a.button.is-white
+            span.icon.is-small
+              i.fab.fa-twitter-square
+    .container
+      .card
+        .card-content
+          p.title= poll.name
+          p.subtitile.is-italic.has-text-grey-light.is-size-7= `Creado por ${poll.author.email}`
+          .contetn= poll.description
+      .card
+        .card-content
+          each opt, index in poll.options
+            div
+              - let percentage = poll.optionPercentage(index)
+              span= opt.description
+              span.has-text-weight-light.is-size-7= ` ${opt.votes} votes`
+              progress.progress(value=`${percentage}` max="100")
+                span= percentage + "%"
+
