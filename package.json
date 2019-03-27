@@ -1,7 +1,7 @@
 {
   "name": "encuestapp",
   "version": "1.0.0",
-  "description": "",
+  "description": "WebApp with Node + Express + Pug + Mongo + Mongoose + Jest",
   "main": "app.js",
   "scripts": {
     "test": "set MONGODB_URI=mongodb://localhost:27017/poll_app_test&& jest --detectOpenHandles --forceExit"
@@ -19,7 +19,12 @@
   "devDependencies": {
     "eslint": "^5.15.3",
     "jest": "^24.5.0",
+    "puppeteer": "^1.13.0",
     "superagent": "^4.1.0",
     "supertest": "^4.0.2"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/mrjdavidfg/polls-app.git"
   }
 }
