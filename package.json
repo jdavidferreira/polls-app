@@ -2,6 +2,7 @@
   "name": "encuestapp",
   "version": "1.0.0",
   "description": "WebApp with Node + Express + Pug + Mongo + Mongoose + Jest",
+  "keywords": [ "Express", "Mongoose"],
   "main": "app.js",
   "scripts": {
     "test": "set MONGODB_URI=mongodb://localhost:27017/poll_app_test&& jest --detectOpenHandles --forceExit"
@@ -25,6 +26,6 @@
   },
   "repository": {
     "type" : "git",
-    "url" : "https://github.com/mrjdavidfg/polls-app.git"
+    "url" : "https://github.com/mrjdavidfg/todos-api.git"
   }
 }

@@ -6,20 +6,18 @@ let server
 let page
 let browser
 
-
-
 beforeAll(async () => {
   const width = 1920, height = 1080
 
-  server = app.listen(3000);
+  server = app.listen(3000)
 
   browser = await puppeteer.launch({
     headless: true,
     args: [`--window-size=${width},${height}`]
-  });
-  page = await browser.newPage();
-  await page.setViewport({ width, height });
-});
+  })
+  page = await browser.newPage()
+  await page.setViewport({ width, height })
+})
 
 beforeEach(async () => {
   for (const i in mongoose.connection.collections) {

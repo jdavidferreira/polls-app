@@ -11,10 +11,10 @@ router.use('/', checkSession)
 /* Poll */
 router.get('/', poll.list)
 router.post('/poll', poll.create)
+router.get('/poll/new', poll.new)
 router.get('/poll/:id', poll.findById)
 router.post('/poll/:id/vote', poll.vote)
 router.get('/poll/:id/results', poll.results)
-router.get('/poll/new', poll.new)
 /* Registration */
 router.post('/user', registration.register)
 router.get('/user/new', registration.new)
